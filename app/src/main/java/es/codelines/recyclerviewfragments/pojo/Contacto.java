@@ -1,4 +1,4 @@
-package es.codelines.recyclerviewfragments;
+package es.codelines.recyclerviewfragments.pojo;
 
 /**
  * Created by abraham on 3/2/17.

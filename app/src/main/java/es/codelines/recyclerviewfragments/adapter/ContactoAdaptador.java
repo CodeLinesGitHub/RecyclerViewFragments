@@ -1,4 +1,4 @@
-package es.codelines.recyclerviewfragments;
+package es.codelines.recyclerviewfragments.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,6 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import es.codelines.recyclerviewfragments.pojo.Contacto;
+import es.codelines.recyclerviewfragments.DetalleContacto;
+import es.codelines.recyclerviewfragments.R;
 
 /**
  * Created by abraham on 13/2/17.
