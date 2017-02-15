@@ -24,8 +24,6 @@ import es.codelines.recyclerviewfragments.pojo.Contacto;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Contacto> contactos;
-    private RecyclerView rvContactos;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -39,18 +37,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         setUpViewPager();
-
-        /*rvContactos = (RecyclerView) findViewById(R.id.rvContactos);
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-        //GridLayoutManager glm = new GridLayoutManager(this, 2);
-
-        rvContactos.setLayoutManager(llm);
-
-        inicializarListaContactos();
-        inicializarAdaptador();*/
 
         if(toolbar != null){
             setSupportActionBar(toolbar);
@@ -70,20 +56,10 @@ public class MainActivity extends AppCompatActivity {
     private void setUpViewPager (){
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragment()));
         tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_contacts);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_action_name);
     }
 
-    public ContactoAdaptador adaptador;
-    public void inicializarAdaptador(){
-        adaptador = new ContactoAdaptador(contactos, this);
-        rvContactos.setAdapter(adaptador);
-    }
 
-    public void inicializarListaContactos(){
-        contactos = new ArrayList<>();
-
-        contactos.add(new Contacto(R.drawable.candy_icon, "Anahi salgado", "77779999", "anahi@gmail.com"));
-        contactos.add(new Contacto(R.drawable.forest_mushroom_icon, "Pedro Sanchez", "88882222", "pedro@gmail.com"));
-        contactos.add(new Contacto(R.drawable.shock_rave_bonus_icon, "Mireya Martinez", "33331111", "mireya@gmail.com"));
-        contactos.add(new Contacto(R.drawable.yammi_banana_icon, "Juan Lopez", "44442222", "juan@gmail.com"));
-    }
 }
